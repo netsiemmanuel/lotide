@@ -6,8 +6,8 @@ const assertEqual = function (actual, expected) {
   console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
 };
 function eqArrays(arr1, arr2) {
-  for (i = 0; i < arr1.length; i++) {
-    for (j = 0; j < arr2.length; j++) {
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
 
       if (typeof arr1[i] !== typeof arr2[j]) {
         return false;
