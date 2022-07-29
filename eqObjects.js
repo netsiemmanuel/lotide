@@ -23,24 +23,31 @@ function eqArrays(arr1, arr2) {
   return false;
 
 };
+//              CODE FOR eqObjects
 const eqObjects = function (obj1, obj2) {
   if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+    console.log('hi');
     return false;
   }
-
-  const arrKeysOne = Object.keys(obj1)
-  for (let keys of arrKeysOne) {
-    if (Array.isArray(obj1[keys])) {
-      return eqArrays(obj1[keys, obj2[keys]])
-    }
-    else {
-      if (obj1[keys] !== obj2[keys]) {
-        return false;
-      }
-    }
-    return true;
+  const arrKeys =[]
+  arrKeys.push( Object.keys(obj1))
+  arrKeys.push(Object.keys(obj2))
+  for (let keys in arrKeys) {
+  if (Array.isArray(obj1[keys]) || Array.isArray(obj2[keys])) {
+    return eqArrays(obj1[keys], obj2[keys])
   }
+
+
+  if (obj1[keys] !== obj2[keys]) {
+  return false;
+  }
+   if (obj1[keys] === obj2[keys]){
+    return true;
 }
+}
+}   
+ 
+//TEST CODE
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 console.log(eqObjects(ab, ba)); // => true
