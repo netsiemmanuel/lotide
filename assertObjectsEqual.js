@@ -34,3 +34,14 @@ const eqObjects = function (obj1, obj2) {
     return true;
   }
 }
+function assertObjectsEqual(obj1,obj2){
+  if(eqObjects(obj1,obj2) === true){
+    console.log(`✅✅✅ Assertion Passed: ${obj1} === ${obj2}`);
+    process.exit();
+  }
+  console.log(`🛑🛑🛑 Assertion Failed: ${obj1} !== ${obj2}`);
+};
+//TEST CODE
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
+console.log(assertObjectsEqual(ab, ba)); // => true

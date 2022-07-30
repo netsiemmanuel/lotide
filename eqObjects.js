@@ -26,7 +26,6 @@ function eqArrays(arr1, arr2) {
 //              CODE FOR eqObjects
 const eqObjects = function (obj1, obj2) {
   if (Object.keys(obj1).length !== Object.keys(obj2).length) {
-    console.log('hi');
     return false;
   }
   const arrKeys =[]
