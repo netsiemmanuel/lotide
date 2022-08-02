@@ -1,3 +1,5 @@
+
+
 const middle = function(array){
   let result = [];
   if (array.length< 3){
@@ -10,6 +12,4 @@ const middle = function(array){
   }
   return array.slice(((array.length/2)-1),((array.length/2)+1))
 };
-console.log(middle([1, 2, 3, 4, 5,])); // => [3])
-console.log(middle([1, 2, 3, 4])); // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])); // => [3, 4]
+module.exports = middle;
